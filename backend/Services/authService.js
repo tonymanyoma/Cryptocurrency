@@ -58,7 +58,7 @@ module.exports =  class AuthService {
         var newUser = {}
         newUser.name = data.name
         newUser.email = data.email
-        // newUser.image = data.body.image
+        newUser.image = 'avatar.png'
         newUser.description = data.descripction
         newUser.password = await bcrypt.hash(data.password, 10);
         newUser = await User.create(newUser)
@@ -72,5 +72,3 @@ module.exports =  class AuthService {
   }
   
 }
-//   module.exports = {login,register}
-

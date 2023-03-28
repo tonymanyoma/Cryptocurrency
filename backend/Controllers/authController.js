@@ -1,5 +1,3 @@
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
 const moment = require('moment');
 const crypto = require('crypto');
 const CryptoJS = require("crypto-js");
