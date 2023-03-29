@@ -26,8 +26,8 @@ describe('componente Index.vue', () => {
 
     /// Ejecuta el metodo que cambia el valor de la variable a "true"
 
-    wrapper.vm.search()
-    /// Evalúa que el nuevo valor search sea "true"
+    wrapper.vm.getCryptoCurrency()
+    /// Evalúa que el nuevo valor getCryptoCurrency sea "true"
 
     expect(wrapper.vm.showResults).toBe(false)
   })
