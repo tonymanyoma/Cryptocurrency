@@ -8,13 +8,19 @@
           <div slot="title">
 
           </div>
-
+            <vs-navbar-item index="0" >
+                <a @click="goHome()">Home</a>
+            </vs-navbar-item>
+            <vs-navbar-item index="0" >
+                <a @click="goProfile()">Mi perfil</a>
+            </vs-navbar-item>
             <vs-navbar-item index="0" >
                 <a @click="logout()">Cerrar sesión</a>
             </vs-navbar-item>
             <vs-spacer></vs-spacer>
             <vs-button color-text="rgb(255, 255, 255)" color="rgba(255, 255, 255, 0.3)" type="flat" icon="more_horiz"></vs-button>
       </vs-navbar>
+
     </div>
 </template>
 <script>
@@ -27,10 +33,7 @@ export default {
 
   data () {
     return {
-      name: '',
-      percent: '',
-      showResults: false,
-      results: []
+      active:true,
     }
   },
 
@@ -38,38 +41,26 @@ export default {
 
   methods: {
 
+    goHome(){
+      this.$router.push({ path: '/home' });
+    },
+
+    goProfile(){
+      this.$router.push({ path: '/profile' });
+    },
+
     //metodo para cerrar sesion
     logout(){
-        this.loadingOpen()
-        this.axios({
-            url: 'logout',
-            method: 'GET',
-            headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Headers': '*',
-            'Authorization': 'Bearer ' + localStorage.token
-            }
-        }).then((result) => {
-            this.results = []
-            this.$vs.notify({
-                text: 'Sesión cerrada con éxito',
-                color: 'success',
-                position: 'top-center',
-                icon: 'done'
-            })
-            this.loadingClose()
-            this.$router.push({ path: '/' });
-        }).catch(error => {
-            if (error) {
-            this.loadingClose()
-            this.$vs.notify({
-                text: error.response.data.message,
-                color: 'danger',
-                icon: 'warning'
-            })
-            }
-        })
+      
+        localStorage.removeItem('token');
+        localStorage.removeItem('userId');
+        this.$router.push({ path: '/' });
+    
     },
   }
 }
 </script>
+
+<style scoped>
+
+</style>

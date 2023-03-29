@@ -91,7 +91,8 @@ export default {
             }
         }).then((result) => {
             // console.log('result', result.data.data)
-            localStorage.setItem('token', result.data.data)
+            localStorage.setItem('token', result.data.token)
+            localStorage.setItem('userId', result.data.userId)
             this.loadingClose()
             this.email = ''
             this.password = ''

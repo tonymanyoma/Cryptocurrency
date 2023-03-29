@@ -6,9 +6,10 @@ import VueRouter from 'vue-router'
 import Login from '../views/Login/Index.vue'
 import Home from '../views/Home/Index.vue'
 import Register from '../views/Register/Index.vue'
+import Profile from '../views/Profile/Index.vue'
 
 Vue.use(VueRouter)
-
+/*eslint-disable */
 const routes = [
   {
     path: '/',
@@ -23,13 +24,30 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: Home
+    component: Home,
+    beforeEnter: (to, from, next) => {
+      const token = window.localStorage.getItem('token')
+       if (token ) {
+         next();
+       } else {
+         next('/');
+       }
+   },
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: Profile,
+    beforeEnter: (to, from, next) => {
+      const token = window.localStorage.getItem('token')
+       if (token ) {
+         next();
+       } else {
+         next('/');
+       }
+   },
   }
-  // {
-  //   path: '/home/:id',
-  //   name: 'Home',
-  //   component: Home
-  // }
+
 ]
 
 const router = new VueRouter({

@@ -20,7 +20,8 @@ var controller = {
                 if(result.match){
                     res.status(200).send({
                         message: 'Sesión iniciada con éxito',
-                        data: result.accessToken.token
+                        token: result.accessToken.token,
+                        userId: result.userResource.id
                     });
                 }else{
                     res.status(422).send({

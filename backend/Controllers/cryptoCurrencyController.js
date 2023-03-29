@@ -1,6 +1,4 @@
-const moment = require('moment');
-const crypto = require('crypto');
-const CryptoJS = require("crypto-js");
+
 require('dotenv').config();
 
 const cryptoCurrencyService = require('../Services/cryptoCurrencyService')
@@ -9,9 +7,9 @@ var controller = {
 
 
     getCryptoCurrency: async (req, res) => {
-           var crypto = new cryptoCurrencyService();
+           var cryptoCurrency = new cryptoCurrencyService();
 
-           var result = await crypto.getCryptoCurrency()
+           var result = await cryptoCurrency.getCryptoCurrency()
 
             if(result){
                 res.status(200).send({
@@ -31,9 +29,9 @@ var controller = {
     priceCryptoCurrency: async (req, res) => {
 
         var id = req.body.id
-        var crypto = new cryptoCurrencyService();
+        var cryptoCurrency = new cryptoCurrencyService();
 
-        var result = await crypto.priceCryptoCurrency(id)
+        var result = await cryptoCurrency.priceCryptoCurrency(id)
 
          if(result){
              res.status(200).send({
