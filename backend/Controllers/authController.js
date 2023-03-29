@@ -15,27 +15,22 @@ var controller = {
 
            var result = await auth.login(userLoginDto)
 
-           console.log('result', result)
-
            if(result.userResource){
 
                 if(result.match){
-                    res.json({
+                    res.status(200).send({
                         message: 'Sesión iniciada con éxito',
-                        data: result.accessToken.token,
-                        status: 200,
+                        data: result.accessToken.token
                     });
                 }else{
-                    res.json({
-                        message: 'Contraseña incorrecta',
-                        status: 422,
+                    res.status(422).send({
+                        message: 'Contraseña incorrecta'
                     });
                 }
 
            }else{
-            res.json({
-                message: 'No existe un usuario con ese email',
-                status: 422,
+            res.status(422).send({
+                message: 'No existe un usuario con ese email'
             });
            }
 
@@ -54,15 +49,13 @@ var controller = {
 
 
         if(result.user){
-            res.json({
-                message: 'Ya existe un usuario con ese email',
-                status: 422,
+            res.status(422).send({
+                message: 'Ya existe un usuario con ese email'
             });
         }else{
-            res.json({
+            res.status(200).send({
                 message: 'Usuario registrado con éxito',
-                data: result.newUser,
-                status: 200,
+                data: result.newUser
             });
         }
 

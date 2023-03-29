@@ -7,28 +7,26 @@ const cryptoCurrencyService = require('../Services/cryptoCurrencyService')
 
 var controller = {
 
-    getCryptoCurrency: async (req, res) => {
 
-           
+    getCryptoCurrency: async (req, res) => {
            var crypto = new cryptoCurrencyService();
 
            var result = await crypto.getCryptoCurrency()
 
             if(result){
-                res.json({
+                res.status(200).send({
                     message: 'Criptomonedas consultadas',
-                    data: result,
-                    status: 200,
+                    data: result.data
                 });
             }else{
-                res.json({
-                    message: 'Ocurrió un error al consultar las criptomonedas',
-                    status: 422,
+                res.status(422).send({
+                    message: 'Ocurrió un error al consultar las criptomonedas'
                 });
             }
      
 
 	},
+
 
     priceCryptoCurrency: async (req, res) => {
 
@@ -37,17 +35,14 @@ var controller = {
 
         var result = await crypto.priceCryptoCurrency(id)
 
-        console.log('result', result)
          if(result){
-             res.json({
+             res.status(200).send({
                  message: 'Precio consultado',
-                 data: result,
-                 status: 200,
+                 data: result
              });
          }else{
-             res.json({
-                 message: 'Ocurrió un error al consultar el precio',
-                 status: 422,
+             res.status(422).send({
+                 message: 'Ocurrió un error al consultar el precio'
              });
          }
   
@@ -56,9 +51,6 @@ var controller = {
 
 
 }
-
-
-
 
 
 module.exports = controller;

@@ -8,7 +8,7 @@ var router = express.Router();
 
 
 // Rutas de criptomonedas
-router.get('/crypto/getCryptoCurrency',  cryptoCurrencyController.getCryptoCurrency);
-router.post('/crypto/priceCryptoCurrency',  cryptoCurrencyController.priceCryptoCurrency);
+router.get('/crypto/getCryptoCurrency', auth.validateToken, cryptoCurrencyController.getCryptoCurrency);
+router.post('/crypto/priceCryptoCurrency', auth.validateToken, cryptoCurrencyController.priceCryptoCurrency);
 
 module.exports = router;
