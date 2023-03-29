@@ -41,6 +41,9 @@
 
 # Endpoints disponibles
 
+# Documentación postman
+https://documenter.getpostman.com/view/7570049/2s93RTPrSM
+
 1. Registrar usuario
 
   - url http://localhost:4001/api/auth/register
