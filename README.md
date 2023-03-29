@@ -1,6 +1,6 @@
 ![Image text](https://www.semana.com/resizer/V3PfnzpOb2pBVYf8IQtRdFLmcN4=/1280x720/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/FRSZT6UL5NHI3CYKXVH2O6FMWE.jpg)
 
-# App que consume api de criptomonedas 
+# App que integra api de criptomonedas 
 > App construida en Node js y vue js que lista las criptomonedas de el api de coin base
 > https://docs.cloud.coinbase.com/sign-in-with-coinbase/docs/api-currencies 
 
@@ -93,7 +93,7 @@
   }
   ```
 
-    3. Obtener criptomonedas
+  3. Obtener criptomonedas
 
   - url http://localhost:4001/api/crypto/getCryptoCurrency
   - Method GET
