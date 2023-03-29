@@ -4,14 +4,14 @@ const User = require('../Models/User');
 module.exports =  class UserService {
 
 
-   //obtener las información de el usuario
+   //obtener las información del usuario
    async getUser(id){
 
     try {
 
         var userResource = null
 
-        userResource = await User.findOne({ where: { id: id} })
+        userResource = await User.findOne( { where: { id: id}, attributes: ['id','name', 'image', 'description', 'created_at', 'updated_at'] })
 
         return  userResource.dataValues;
 
@@ -22,7 +22,7 @@ module.exports =  class UserService {
 
   }
 
-     //actualizar información de el usuario
+     //actualizar información del usuario
      async updateUser(data){
 
         try {
