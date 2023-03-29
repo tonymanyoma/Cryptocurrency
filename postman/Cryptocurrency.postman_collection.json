@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "85b2913f-0a1c-4e86-957b-cdcfd289e287",
+		"name": "Cryptocurrency",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7570049"
+	},
+	"item": [
+		{
+			"name": "http://localhost:4001/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"chester@email.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4001/api/auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"name\": \"chester manyoma\",\r\n    \"description\": \"es bonito\",\r\n    \"email\": \"chester@email.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4001/api/crypto/getCryptoCurrency",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxMywibmFtZSI6ImNoZXN0ZXIgbWFueW9tYSIsImVtYWlsIjoiY2hlc3RlckBlbWFpbC5jb20iLCJpbWFnZSI6ImF2YXRhci5wbmciLCJkZXNjcmlwdGlvbiI6ImVzIGJvbml0byIsInBhc3N3b3JkIjoiJDJiJDEwJDZad20yVXBRdFZmTTlTdWVTUm81NS4uL1NWYWo1R2EyVzFSY2FMb21QNmVRZ1pvTUhlWXQ2IiwiY3JlYXRlZEF0IjoiMjAyMy0wMy0yOVQxMzo1MTozMC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMy0wMy0yOVQxMzo1MTozMC4wMDBaIn0sImlhdCI6MTY4MDA5Nzk2OCwiZXhwIjoxNjgwNjE2MzY4fQ.4KPQShyFSii8S601t3eOz-XdBB34CAB1dc9uWqlNLh0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4001/api/crypto/getCryptoCurrency",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"crypto",
+						"getCryptoCurrency"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4001/api/crypto/priceCryptoCurrency",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJuYW1lIjoiY2hlc3RlciBtYW55b21hIiwiZW1haWwiOiJjaGVzdGVyQGVtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly9pLmltZ3VyLmNvbS9mbnlmcm5zLmpwZyIsImRlc2NyaXB0aW9uIjoiZXMgYm9uaXRvIiwicGFzc3dvcmQiOiIkMmIkMTAkNWp4UHI2ZU9ISHp2LllDWVhKRXFtLnMuRFdGQnhIQlQwQTFSVjNUNHAzUTAzc2JiWVVBQ0ciLCJjcmVhdGVkQXQiOiIyMDIzLTAzLTI3VDIyOjA2OjI5LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDIzLTAzLTI3VDIyOjA2OjI5LjAwMFoifSwiaWF0IjoxNjgwMDU4MDE0LCJleHAiOjE2ODA1NzY0MTR9.cKk5gAPNFQUWdn6k-ASz3_PQXxRwci67gwigu7tpCqs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"BTC\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/crypto/priceCryptoCurrency",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"crypto",
+						"priceCryptoCurrency"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4001/api/user/getUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJuYW1lIjoiY2hlc3RlciBtYW55b21hIiwiZW1haWwiOiJjaGVzdGVyQGVtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly9pLmltZ3VyLmNvbS9mbnlmcm5zLmpwZyIsImRlc2NyaXB0aW9uIjoiZXMgYm9uaXRvIiwicGFzc3dvcmQiOiIkMmIkMTAkNWp4UHI2ZU9ISHp2LllDWVhKRXFtLnMuRFdGQnhIQlQwQTFSVjNUNHAzUTAzc2JiWVVBQ0ciLCJjcmVhdGVkQXQiOiIyMDIzLTAzLTI3VDIyOjA2OjI5LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDIzLTAzLTI3VDIyOjA2OjI5LjAwMFoifSwiaWF0IjoxNjgwMDU4MDE0LCJleHAiOjE2ODA1NzY0MTR9.cKk5gAPNFQUWdn6k-ASz3_PQXxRwci67gwigu7tpCqs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 13\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/user/getUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"user",
+						"getUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4001/api/user/updateUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJuYW1lIjoiY2hlc3RlciBtYW55b21hIiwiZW1haWwiOiJjaGVzdGVyQGVtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly9pLmltZ3VyLmNvbS9mbnlmcm5zLmpwZyIsImRlc2NyaXB0aW9uIjoiZXMgYm9uaXRvIiwicGFzc3dvcmQiOiIkMmIkMTAkNWp4UHI2ZU9ISHp2LllDWVhKRXFtLnMuRFdGQnhIQlQwQTFSVjNUNHAzUTAzc2JiWVVBQ0ciLCJjcmVhdGVkQXQiOiIyMDIzLTAzLTI3VDIyOjA2OjI5LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDIzLTAzLTI3VDIyOjA2OjI5LjAwMFoifSwiaWF0IjoxNjgwMDU4MDE0LCJleHAiOjE2ODA1NzY0MTR9.cKk5gAPNFQUWdn6k-ASz3_PQXxRwci67gwigu7tpCqs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"id\": 3,\r\n    \"name\": \"chester manyomaa\",\r\n    \"description\": \"es bonitooo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/user/updateUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"user",
+						"updateUser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
