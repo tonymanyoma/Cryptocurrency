@@ -1,6 +1,6 @@
 
 const User = require('../Models/User');
-
+require('dotenv').config();
 module.exports =  class UserService {
 
 
@@ -11,7 +11,7 @@ module.exports =  class UserService {
 
         var userResource = null
 
-        userResource = await User.findOne( { where: { id: id}, attributes: ['id','name', 'image', 'description', 'created_at', 'updated_at'] })
+        userResource = await User.findOne( { where: { id: id}, attributes: ['id','name', 'email','image', 'description', 'created_at', 'updated_at'] })
 
         return  userResource.dataValues;
 
@@ -23,19 +23,33 @@ module.exports =  class UserService {
   }
 
      //actualizar información del usuario
-     async updateUser(data){
+     async updateUser(data,file){
 
         try {
-            
+
             var user = {}
             var userResource = null
+            var userUpdate = null
+            var fileName = null
+
+            userResource = await User.findOne({ where: { id: data.id } })
+
+            
+            if(file){
+                console.log('file name***')
+  
+                user.image = 'http://localhost:'+ process.env.PORT + '/public/'+file.filename
+            }
 
             user.name = data.name
             user.description = data.description
     
-            userResource = await User.update(user, { where: { id: data.id }})
+            userUpdate = await User.update(user, { where: { id: data.id }})
+
+            
+            console.log('el userupdate', userUpdate)
     
-            return  userResource;
+            return  { userResource, userUpdate };
     
             
         }catch(e){

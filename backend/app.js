@@ -20,13 +20,16 @@ app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:500
 
 app.use(cors())
 
+// app.use('/public',express.static('http://localhost:'+ process.env.PORT+'/Storage/imgs'))
+app.use('/public',express.static(`${__dirname}/Storage/imgs`))
+
 // Añadir perfijos a rutas / cargar rutas
 app.use('/api/',authRoutes);
 app.use('/api/',cryptoCurrencyRoutes);
 app.use('/api/',userRoutes);
 
 //iniciando el server 
-const PORT = config.port
+const PORT = config.PORT
 
 
 //corriendo el servidor de socket io

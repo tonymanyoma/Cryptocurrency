@@ -177,13 +177,29 @@
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": "{   \"id\": 3,\r\n    \"name\": \"chester manyomaa\",\r\n    \"description\": \"es bonitooo\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "13",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "chester manyomaa",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "lorem ipsum",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/anton/Downloads/descarga.png"
 						}
-					}
+					]
 				},
 				"url": {
 					"raw": "http://localhost:4001/api/user/updateUser",

@@ -1,5 +1,7 @@
+require('dotenv').config();
+
 var config = {
-    port: 4001,    
+    PORT: process.env.PORT
 };
 
 
