@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../Models/User');
 const { json } = require("body-parser");
-
+require('dotenv').config();
 
 module.exports =  class AuthService {
 
@@ -58,7 +58,7 @@ module.exports =  class AuthService {
         var newUser = {}
         newUser.name = data.name
         newUser.email = data.email
-        newUser.image = 'avatar.png'
+        newUser.image = 'http://localhost:'+ process.env.PORT + '/public/avatar.png'
         newUser.description = data.description
         newUser.password = await bcrypt.hash(data.password, 10);
         newUser = await User.create(newUser)

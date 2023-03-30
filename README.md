@@ -23,7 +23,8 @@
 
 ## Backend
   - Crear archivo .env con la configuración de las variables de entorno para la base de datos, autenticación y url del api de coin base 
-    ```
+    ``` 
+        PORT=4001
         DB_DATABASE=cryptocurrency
         DB_USER=
         DB_PASSWORD=
@@ -41,7 +42,7 @@
 
 # Endpoints disponibles
 
-# Documentación postman
+## Documentación postman
 https://documenter.getpostman.com/view/7570049/2s93RTPrSM
 
 1. Registrar usuario
@@ -193,12 +194,13 @@ https://documenter.getpostman.com/view/7570049/2s93RTPrSM
 
   - url http://localhost:4001/api/user/updateUser
   - Method POST
-  - Params
+  - Form data
   ```
     {
       "id": 13,
       "name": "chester manyomaa",
-      "description": " Lorem Ipsum"
+      "description": " Lorem Ipsum",
+      "image": "File"
     }
     
   ```
